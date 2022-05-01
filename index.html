@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Silly story generator</title>
+    <meta
+      name="description"
+      content="A beautiful, and slightly more functional, version of the silly story generator assessment provided by MDN."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+
+    <div class="wrapper">
+      <section class="content">
+        <h1><span>akaAbdullahMateen/</span>silly-story-generator</h1>
+        <p class="story">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum fugiat similique quos debitis aspernatur alias quisquam
+          doloribus, dicta ad sit et pariatur animi odio omnis minus? Error, iusto voluptas.
+        </p>
+        <img src="avatar.jpg" alt="A 3D cartoonish avatar with a beard and green cap." />
+      </section>
+
+      <section class="form">
+        <div class="name">
+          <label for="protagonist-name">Protagonist name:</label>
+          <input
+            id="protagonist-name"
+            type="text"
+            pattern="^[a-zA-Z\s]*$"
+            name="protagonist-name"
+            placeholder="Bob"
+            minlength="2"
+            maxlength="107"
+          />
+        </div>
+        <fieldset>
+          <legend>Measurement units</legend>
+          <div class="options">
+            <input id="imperial" type="radio" name="units" value="imperial" checked />
+            <label class="radio" for="imperial">
+              <p>Imperial</p>
+              <p>U.S</p>
+              <div class="tint"></div>
+            </label>
+            <input id="metric" type="radio" name="units" value="metric" />
+            <label class="radio" for="metric">
+              <p>Metric</p>
+              <p>U.K</p>
+              <div class="tint"></div>
+            </label>
+          </div>
+        </fieldset>
+        <button class="generate">Generate</button>
+      </section>
+    </div>
+
+    <script src="main.js" async defer></script>
+  </body>
+</html>

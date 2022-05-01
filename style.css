@@ -1,0 +1,268 @@
+/* Custom fonts */
+
+@font-face {
+  font-family: "Inter";
+  src: url("inter.woff2") format("woff2 supports variations"), url("inter.woff2") format("woff2-variations");
+  font-style: oblique 0deg 20deg;
+  font-weight: 1 999;
+  font-stretch: 75% 100%;
+  font-display: swap;
+}
+
+/* Root variables */
+
+:root {
+  --size-small: 25px;
+  --size-medium: 70px;
+  --size-large: 200px;
+  --black-background: #1f1f1f;
+  --white-background: #ffffff;
+  --text-primary: #2f363d;
+  --text-secondary: #6e7681;
+  --accent-primary: #f34b7d;
+  --accent-secondary: #0288d1;
+  --error-primary: #f44336;
+}
+
+/* Reset and normalization */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+fieldset {
+  border: none;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+button,
+.radio {
+  cursor: pointer;
+}
+
+/* Typesetting */
+
+.wrapper {
+  font-family: "Inter", sans-serif;
+}
+
+h1,
+input[type="text"] {
+  color: var(--text-primary);
+}
+
+p,
+label,
+legend {
+  color: var(--text-secondary);
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 3.5rem;
+  line-height: 1.2;
+  letter-spacing: 1px;
+}
+
+h1 span {
+  font-weight: normal;
+}
+
+.story {
+  font-size: 1.7rem;
+  line-height: 1.5;
+}
+
+label {
+  font-size: 1rem;
+}
+
+input[type="text"] {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.radio p:nth-child(1) {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.7rem;
+}
+
+.radio p:nth-child(2) {
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+button {
+  font-family: "Inter";
+  letter-spacing: 1px;
+  color: var(--white-background);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+/* Interactive states */
+
+.name input:hover {
+  border-color: var(--black-background);
+}
+
+.name input:focus {
+  border: 3px solid var(--accent-secondary);
+}
+
+.name input:invalid {
+  border: 3px solid var(--error-primary);
+}
+
+.radio:hover {
+  border: 1px solid var(--black-background);
+}
+
+.options input[type="radio"]:checked + label {
+  border: 3px solid var(--accent-secondary);
+}
+
+.options input[type="radio"]:checked + label .tint {
+  visibility: visible;
+}
+
+button:hover {
+  background-color: #0277bd;
+}
+
+button:active {
+  background-color: #01579b;
+}
+
+/* Wrapper structure */
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("doodles.jpg") repeat;
+}
+
+.wrapper {
+  max-width: 1200px;
+  background-color: var(--white-background);
+  padding: var(--size-medium);
+  border-bottom: var(--size-small) solid var(--accent-primary);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 16px 2px #1f1f1f;
+}
+
+/* Content layout and inner elements structure */
+
+.content {
+  display: grid;
+  grid-template-columns: minmax(var(--size-large), 1fr) var(--size-large);
+  grid-template-areas:
+    "title avatar"
+    "story .";
+  column-gap: var(--size-medium);
+  align-items: flex-start;
+}
+
+h1 {
+  grid-area: title;
+}
+
+.story {
+  grid-area: story;
+}
+
+img {
+  grid-area: avatar;
+  width: var(--size-large);
+  height: var(--size-large);
+  object-fit: cover;
+  border-radius: var(--size-small);
+}
+
+/* Form layout and inner elements structure */
+
+.form {
+  margin-top: var(--size-medium);
+  display: flex;
+  flex-direction: row;
+  gap: var(--size-medium);
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.name input {
+  width: 280px;
+  height: var(--size-medium);
+  border-radius: 0.5rem;
+  border: 1px solid gray;
+  padding: 1.5rem;
+}
+
+fieldset .options {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: var(--size-small);
+}
+
+.radio {
+  width: 90px;
+  height: var(--size-medium);
+  border-radius: 0.5rem;
+  padding-left: 1rem;
+  border: 1px solid var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.25rem;
+  position: relative;
+}
+
+.options .tint {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  background-color: var(--accent-secondary);
+  opacity: 0.1;
+  z-index: 1;
+}
+
+button {
+  height: var(--size-medium);
+  background-color: var(--accent-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4rem;
+  border-radius: 0.5rem;
+  margin-left: auto;
+  margin-top: 27px;
+}
