@@ -1,15 +1,3 @@
-/*
-const protagonistNameField = document.getElementById("protagonist-name");
-protagonistNameField.addEventListener("onchange", () => {
-
-});
-
-let protagonistName = protagonistNameField.value.trim()
-if(protagonistName === ""){
-  protagonistName = "Bob";
-}
-*/
-
 const protagonistNameField = document.getElementById("protagonist-name");
 const generateButton = document.querySelector(".generate");
 const storyElement = document.querySelector(".story");
@@ -48,7 +36,7 @@ function generate() {
 
   if (document.getElementById("metric").checked) {
     const pound = 300;
-    const stone = 300 / 14;
+    const stone = pound / 14;
     const weight = `${Math.round(stone).toString()} stone`;
 
     const fahrenheit = 94;
